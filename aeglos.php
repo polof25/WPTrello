@@ -25,7 +25,7 @@ if ( ! session_id() ) {
 }
 
 function add_admin_scripts() {
-  wp_enqueue_script( 'trello-client-js', 'https://api.trello.com/1/client.js?key=3fd5bab64b6586d6c8fd696eab63b88f', array(), null, true);
+  wp_enqueue_script( 'trello-client-js', 'https://api.trello.com/1/client.js?key=[APP-KEY]', array(), null, true);
   wp_enqueue_script( 'aeglos-admin-js', plugins_url( 'assets/js/aeglos-admin.js', __FILE__), array(), null, true);
 
   wp_enqueue_style( 'aeglos-admin-css', plugins_url( 'assets/css/aeglos-admin.css', __FILE__));
@@ -46,9 +46,12 @@ function settings_page() {
     <div id="icon-options-general" class="icon32"></div>
     <h2><?php echo 'Aeglos Settings' ?></h2>
     <h1>API Trello</h1>
+    <form class="" action="" method="post">
+      <a href="https://trello.com/app-key">Obtenir mon APP-KEY</a>
+      <input id="connect" class="display" type="button" name="name" value="Se Connecter" />
+      <input id="disconnect" class="display" type="button" name="name" value="Se Déconnecter" style="display:none;" />
+    </form>
 
-    <input id="connect" class="display" type="button" name="name" value="Se Connecter" />
-    <input id="disconnect" class="display" type="button" name="name" value="Se Déconnecter" style="display:none;" />
 
     <div id="getboards" class="display" style="display:none;">
 
